@@ -1,0 +1,79 @@
+package Tablas;
+
+public class Materias {
+    private int codigo;
+    private String nombre;
+    private int creditos;
+    private int horasSemana;
+    private String tipo;
+    private int profesor;
+
+    public Materias(int codigo, String nombre, int creditos, int horasSemana, String tipo, int profesor) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.creditos = creditos;
+        this.horasSemana = horasSemana;
+        this.tipo = tipo;
+        this.profesor = profesor;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getCreditos() {
+        return creditos;
+    }
+
+    public void setCreditos(int creditos) {
+        this.creditos = creditos;
+    }
+
+    public int getHorasSemana() {
+        return horasSemana;
+    }
+
+    public void setHorasSemana(int horasSemana) {
+        this.horasSemana = horasSemana;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public int getProfesor() {
+        return profesor;
+    }
+
+    public void setProfesor(int profesor) {
+        this.profesor = profesor;
+    }
+
+    @Override
+    public String toString() {
+        return "Materias{" +
+                "codigo=" + codigo +
+                ", nombre='" + nombre + '\'' +
+                ", creditos=" + creditos +
+                ", horasSemana=" + horasSemana +
+                ", tipo='" + tipo + '\'' +
+                ", profesor=" + profesor +
+                '}';
+    }
+}

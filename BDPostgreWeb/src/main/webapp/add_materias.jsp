@@ -20,14 +20,15 @@
         try {
             Class.forName(DRIVER);
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
-            Statement statement = connection.createStatement();
-            stm.executeQuery("INSERT INTO Profesores(codigo, nombre, creditos, horasSemana, tipo, profesor)\n" +
+            stm = connection.createStatement();
+            stm.executeUpdate("INSERT INTO Materias(codigo, nombre, creditos, horasxsemana, tipo, profesor)\n" +
                     "VALUES\n" +
                     "('" + codigo + "', '" + nombre + "', '" + creditos + "', " + horasSemana + ", '" + tipo + "', '" + profesor +  "');");
 
 
-            stm.close();
+
             connection.close();
+            stm.close();
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -20,11 +20,10 @@
         try {
             Class.forName(DRIVER);
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
-            Statement statement = connection.createStatement();
-            stm.executeQuery("INSERT INTO Profesores(nrc, materia, profesor, semestre, horario, cupo)\n" +
+            stm = connection.createStatement();
+            stm.executeUpdate("INSERT INTO Cursos(nrc, materia, profesor, semestre, horario, cupo)\n" +
                     "VALUES\n" +
                     "('" + nrc + "', '" + materia + "', '" + profesor + "', " + semestre + ", '" + horario + "', '" + cupo +  "');");
-
 
             stm.close();
             connection.close();

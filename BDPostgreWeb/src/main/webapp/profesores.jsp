@@ -27,8 +27,8 @@
     <p>Teléfono: <input type="text" name="telefono"/> </p>
     <p>Celular: <input type="text" name="celular"/> </p>
     <p>Tipo Estudio: <input type="text" name="tipoEstudios"/> </p>
-    <p>Email: <input type="email" name="email"/> </p>
-    <p>Fecha de Nacimiento: <input type="date" name="fechaNac"/> </p>
+    <p>Email: <input type="text" name="email"/> </p>
+    <p>Fecha de Nacimiento: <input type="text" name="fechaNac"/> </p>
     <p>Lugar de Estudio: <input type="text" name="lugarEstudios"/> </p>
 
     <p><input type="submit" value="Registrar"/> </p>

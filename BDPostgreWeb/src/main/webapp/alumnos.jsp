@@ -21,7 +21,7 @@
     <p>Apellido Materno: <input type="text" name="aMaterno"/> </p>
     <p>Nombre: <input type="text" name="nombre"/> </p>
     <p>Edad: <input type="text" name="edad"/> </p>
-    <p>Fecha Nacimiento: <input type="date" name="fechaNac"/> </p>
+    <p>Fecha Nacimiento: <input type="text" name="fechaNac"/> </p>
     <p>Celular: <input type="text" name="celular"/> </p>
     <p>Email: <input type="text" name="email"/> </p>
     <p>Direccion: <input type="text" name="direccion"/> </p>

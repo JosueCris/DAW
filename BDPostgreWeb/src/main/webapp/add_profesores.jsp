@@ -13,7 +13,7 @@ el porque no funcionan ya lo investigare o en el mejor de los casos lo explicara
 <%--<%@ page import="Tablas.*" %>--%>
 <%!
     //public void registrarProfesor(Profesores profesor) {
-    public void registrarProfesor(int idProfesor, String nombre, String aPaterno, String aMaterno, String tipoContrato, int eeEspecializa, String direccion, String telefono, String celular, String tipoEstudios, String email, Date fechaNac, String lugarEstudios) {
+    public void registrarProfesor(int idProfesor, String nombre, String aPaterno, String aMaterno, String tipoContrato, int eeEspecializa, String direccion, String telefono, String celular, String tipoEstudios, String email, String fechaNac, String lugarEstudios) {
 //        Conexion conexion = new Conexion();
         Connection connection = null;
         Statement stm = null;
@@ -28,11 +28,11 @@ el porque no funcionan ya lo investigare o en el mejor de los casos lo explicara
         try {
             Class.forName(DRIVER);
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
-            Statement statement = connection.createStatement();
-            stm.executeQuery("INSERT INTO Profesores(idProfesor, nombre, apaterno, amaterno, tipo_contrato, ee_especializa, direccion, telefono, celular, tipo_estudios, email, fechanac, lugar_estudios)\n" +
+            stm = connection.createStatement();
+            stm.executeUpdate("INSERT INTO Profesores(idProfesor, Nombre, aPaterno, aMaterno, Tipo_Contrato, EE_Especializa, Direccion, Telefono, Celular, Tipo_Estudios, Email, FechaNac, Lugar_Estudios)\n" +
                     "VALUES\n" +
 //                    "('" + profesor.getIdProfesor() + "', '" + profesor.getNombre() + "', '" + profesor.getaPaterno() + "', " + profesor.getaMaterno() + ", '" + profesor.getTipoContrato() + "', '" + profesor.getEeEspecializa() + "', '" + profesor.getDireccion() + "', '" + profesor.getTelefono() + "', " + profesor.getCelular() + ", '" + profesor.getTipoEstudios() + "', '" + profesor.getEmail() + "', '" + profesor.getFechaNac() + "', '" + profesor.getLugarEstudios() + "');");
-                    "('" + idProfesor + "', '" + nombre + "', '" + aPaterno + "', " + aMaterno + ", '" + tipoContrato + "', '" + eeEspecializa + "', '" + direccion + "', '" + telefono + "', " + celular + ", '" + tipoEstudios + "', '" + email + "', '" + fechaNac + "', '" + lugarEstudios + "');");
+                    "('" + idProfesor + "', '" + nombre + "', '" + aPaterno + "', ' " + aMaterno + " ', '" + tipoContrato + "', '" + eeEspecializa + "', '" + direccion + "', '" + telefono + "', " + celular + ", '" + tipoEstudios + "', '" + email + "', '" + fechaNac + "', '" + lugarEstudios + "');");
 
             stm.close();
             connection.close();
@@ -58,7 +58,7 @@ el porque no funcionan ya lo investigare o en el mejor de los casos lo explicara
     String celular = request.getParameter("celular");
     String tipoEstudios = request.getParameter("tipoEstudios");
     String email = request.getParameter("email");
-    Date fechaNac = Date.valueOf(request.getParameter("fechaNac"));
+    String fechaNac = request.getParameter("fechaNac");
     String lugarEstudios = request.getParameter("lugarEstudios");
 
 //    Profesores profesor = new Profesores(idProfesor, nombre, aPaterno, aMaterno, tipoContrato, eeEspecializa, direccion, telefono, celular, tipoEstudios, email, fechaNac, lugarEstudios);

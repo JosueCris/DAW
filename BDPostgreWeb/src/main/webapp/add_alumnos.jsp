@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="java.sql.*" %>
     <%!
-        public void registrarAlumno(String matricula, int semestre, String claveCarrera, String aPaterno, String aMaterno, String nombre, int edad, Date fechaNac, String celular, String email, String direccion, Boolean beca, String telefono) {
+        public void registrarAlumno(String matricula, int semestre, String claveCarrera, String aPaterno, String aMaterno, String nombre, int edad, String fechaNac, String celular, String email, String direccion, Boolean beca, String telefono) {
             Connection connection = null;
             Statement stm = null;
             String BD = "Universidad_Veracruzana";
@@ -19,14 +19,13 @@
             try {
                 Class.forName(DRIVER);
                 connection = DriverManager.getConnection(URL, USER, PASSWORD);
-                Statement statement = connection.createStatement();
-                stm.executeQuery("INSERT INTO Profesores(matricula, semestre, claveCarrera, aPaterno, aMaterno, nombre, edad, fechaNac, celular, email, direccion, beca, telefono)\n" +
+                stm = connection.createStatement();
+                stm.executeUpdate("INSERT INTO Alumnos(Matricula, Semestre, Clave_Carrera, aPaterno, aMaterno, Nombre, Edad, FechaNac, Celular, Email, Direccion, Beca, Telefono)\n" +
                         "VALUES\n" +
-                        "('" + matricula + "', '" + semestre + "', '" + claveCarrera + "', " + aPaterno + ", '" + aMaterno + "', '" + nombre + "', '" + edad + "', '" + fechaNac + "', " + celular + ", '" + email + "', '" + direccion + "', '" + beca + "', '" + telefono + "');");
+                        "('" + matricula + "', '" + semestre + "', '" + claveCarrera + "', ' " + aPaterno + " ', '" + aMaterno + "', '" + nombre + "', '" + edad + "', '" + fechaNac + "', " + celular + ", '" + email + "', '" + direccion + "', '" + beca + "', '" + telefono + "');");
 
-
-                stm.close();
                 connection.close();
+                stm.close();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -45,7 +44,7 @@
     String aMaterno = request.getParameter("aMaterno");
     String nombre = request.getParameter("nombre");
     int edad = Integer.parseInt(request.getParameter("edad"));
-    Date fechaNac = Date.valueOf(request.getParameter("fechaNac"));
+    String fechaNac = request.getParameter("fechaNac");
     String celular = request.getParameter("celular");
     String email = request.getParameter("email");
     String direccion = request.getParameter("direccion");
